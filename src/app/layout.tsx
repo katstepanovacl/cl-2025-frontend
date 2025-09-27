@@ -1,14 +1,10 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Montserrat } from "next/font/google";
 import "./globals.css";
+import Script from "next/script";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const montserrat = Montserrat({
+  variable: "--font-montserrat",
   subsets: ["latin"],
 });
 
@@ -24,10 +20,30 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`${montserrat.variable} antialiased bg-lightest-beige`}>
         {children}
+        <Script id="analytics-listener" strategy="afterInteractive">
+          {`
+            document.addEventListener("click", (event) => {
+              const link = event.target.closest("a[data-analytics]");
+              if (link) {
+                const label = link.getAttribute("data-analytics");
+                const href = link.getAttribute("href");
+
+                fetch("http://localhost:8000/api/track", {
+                  method: "POST",
+                  headers: { "Content-Type": "application/json" },
+                  body: JSON.stringify({
+                    type: "link_click",
+                    label,
+                    href,
+                    timestamp: Date.now()
+                  }),
+                });
+              }
+            });
+          `}
+        </Script>
       </body>
     </html>
   );
