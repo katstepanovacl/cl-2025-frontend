@@ -25,4 +25,16 @@ const checkBasicAuth = (req: NextRequest): NextResponse | null => {
   return new NextResponse("Forbidden", { status: 403 });
 };
 
-export default checkBasicAuth;
+export default function middleware(req: NextRequest) {
+  // Skip auth for static files and API routes
+  if (
+    req.nextUrl.pathname.startsWith("/_next") ||
+    req.nextUrl.pathname.startsWith("/images") ||
+    req.nextUrl.pathname.startsWith("/api") ||
+    req.nextUrl.pathname.includes(".")
+  ) {
+    return NextResponse.next();
+  }
+
+  return checkBasicAuth(req);
+}

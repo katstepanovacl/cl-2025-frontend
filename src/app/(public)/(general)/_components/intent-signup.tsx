@@ -15,11 +15,11 @@ const IntentSignup = ({
   buttonLink,
 }: Props) => {
   return (
-    <div>
-      <p className="font-playfair text-brown text-center text-pretty text-[32px] font-medium tracking-[0.5px] leading-[42px]">
+    <div className="w-full p-6 rounded-lg bg-white border border-medium-beige flex flex-col items-center justify-center gap-5 max-w-[518px]">
+      <p className="font-playfair text-brown text-center text-pretty text-[28px] font-medium tracking-[-0.42px] leading-[38px]">
         {title}
       </p>
-      <p className="mt-6 max-w-[640px] text-light-brown text-center text-balance text-[16px] leading-[24px]">
+      <p className="text-light-brown text-center text-balance text-[16px] leading-[24px]">
         {description}
       </p>
       <Button asChild>
