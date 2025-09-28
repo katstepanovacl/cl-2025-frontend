@@ -12,8 +12,18 @@ const HomePage = () => {
         subheadline="Your go-to platform for seamless event planning and vendor collaboration."
       />
       <div className="flex flex-col gap-6 px-4 md:px-10 lg:px-20">
-        <IntentSignup />
-        <IntentSignup />
+        <IntentSignup
+          title="Join the waitlist"
+          description="Be the first to know when we launch."
+          buttonText="Join the waitlist"
+          buttonLink="/waitlist"
+        />
+        <IntentSignup
+          title="Join the waitlist"
+          description="Be the first to know when we launch."
+          buttonText="Join the waitlist"
+          buttonLink="/waitlist"
+        />
       </div>
     </div>
   );
