@@ -22,7 +22,6 @@ const Hero = ({ hero, logo }: Props) => {
           src={hero}
           alt="hero"
           className="w-full aspect-[16/9] absolute top-0 left-0"
-          objectFit="contain"
           priority
         />
       )}
@@ -30,7 +29,6 @@ const Hero = ({ hero, logo }: Props) => {
         <Image
           src={heroLogo}
           alt="hero logo"
-          objectFit="contain"
           className="md:max-w-90 lg:max-w-[516px] max-w-44 h-auto absolute inset-0 mx-auto transform top-1/2 -translate-y-1/2"
           priority
         />
