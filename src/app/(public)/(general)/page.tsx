@@ -4,7 +4,7 @@ import cardPlaceholder from "@/assets/images/card-placeholder.png";
 import Headline from "./_components/headline";
 import IntentSignup from "./_components/intent-signup";
 import Card from "./_components/card";
-import Container from "@/components/ui/container";
+import Container from "@/app/(public)/(general)/_components/container";
 
 const HomePage = () => {
   return (
@@ -43,9 +43,8 @@ const HomePage = () => {
         </div>
         <Container
           variantWidth="default"
-          variantHeight="none"
+          variantHeight="card"
           backgroundColor="peach"
-          className="pt-5 pb-16 lg:pt-16"
         >
           <Card
             variant="alternate"
@@ -53,6 +52,31 @@ const HomePage = () => {
             alt="card image"
             title="SAY GOODBYE TO CHAOS"
             description="No more juggling countless spreadsheets, endless email threads and scattered documents. All your tools live in one simple spot so you can find everything you need, exactly when you need it."
+            buttonText="Learn More"
+            buttonLink="/welcome/planner"
+          />
+        </Container>
+        <Container variantWidth="default" variantHeight="card">
+          <Card
+            cardImage={cardPlaceholder}
+            alt="card image"
+            title="CONNECT & COLLABORATE WITH EASE"
+            description="Bring your team and partners together effortlessly. Curate Local simplifies communication and coordination, helping planners, vendors and collaborators work in harmony, not separate silos."
+            buttonText="Learn More"
+            buttonLink="/welcome/planner"
+          />
+        </Container>
+        <Container
+          variantWidth="default"
+          variantHeight="card"
+          backgroundColor="peach"
+        >
+          <Card
+            variant="alternate"
+            cardImage={cardPlaceholder}
+            alt="card image"
+            title="MAKE CONFIDENT DECISIONS "
+            description="Get a complete picture of your event from start to end. With clear insights and real-time updates at your fingertips, you’ll feel confident making well-informed choices to fine-tune your events for success."
             buttonText="Learn More"
             buttonLink="/welcome/planner"
           />
