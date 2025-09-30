@@ -4,7 +4,7 @@ import cardPlaceholder from "@/assets/images/card-placeholder.png";
 import Headline from "./_components/headline";
 import IntentSignup from "./_components/intent-signup";
 import Card from "./_components/card";
-import Container from "@/app/(public)/(general)/_components/container";
+import Container from "./_components/container";
 
 const HomePage = () => {
   return (
